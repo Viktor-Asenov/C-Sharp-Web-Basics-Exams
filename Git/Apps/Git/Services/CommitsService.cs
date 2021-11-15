@@ -47,9 +47,6 @@ namespace Git.Services
 
         public CommitViewModel GetCommitRepositoryModel(string id)
         {
-            //тук трябва да дърпаш от базата не от колекцията скомити, а от репозиторитата
-            //от тук връща null при GET заявката на /Commits/Create?id=idOfRepository
-
             var commitRepositoryModel = this.dbContext.Repositories
                 .Where(r => r.Id == id)
                 .Select(r => new CommitViewModel
