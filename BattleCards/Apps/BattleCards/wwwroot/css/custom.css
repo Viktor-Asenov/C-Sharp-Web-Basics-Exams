@@ -1,3 +1,7 @@
+.card-collection li {
+    display: inline-block;
+}
+
 .index-div {
   text-align: center;
   margin: 20px;

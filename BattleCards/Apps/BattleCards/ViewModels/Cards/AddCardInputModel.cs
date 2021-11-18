@@ -1,12 +1,10 @@
 ﻿namespace BattleCards.ViewModels.Cards
 {
-    using BattleCards.Models;
-
     public class AddCardInputModel
     {
         public string Name { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string Image { get; set; }
 
         public string Keyword { get; set; }
 

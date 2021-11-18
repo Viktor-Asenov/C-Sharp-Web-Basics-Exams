@@ -4,7 +4,6 @@
     using BattleCards.ViewModels.Users;
     using SUS.HTTP;
     using SUS.MvcFramework;
-    using System;
 
     public class UsersController : Controller
     {
@@ -75,6 +74,13 @@
             this.usersService.Register(registerInputModel);
 
             return this.Redirect("/Users/Login");
+        }
+
+        public HttpResponse Logout()
+        {
+            this.SignOut();
+
+            return this.Redirect("/");
         }
     }
 }
