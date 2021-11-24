@@ -46,7 +46,12 @@
 
         public bool IsUsernameAvailable(string username)
         {
-            return this.dbContext.Users.Any(u => u.Username == username);
+            if (this.dbContext.Users.FirstOrDefault(u => u.Username == username) != null)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private static string ComputeHash(string input)

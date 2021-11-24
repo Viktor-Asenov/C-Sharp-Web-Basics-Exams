@@ -52,9 +52,29 @@
                 return this.Error("Username is already taken.");
             }
 
+            if (string.IsNullOrEmpty(inputModel.Username))
+            {
+                return this.Error("Username should not be empty.");
+            }
+
             if (inputModel.Username.Length < 4)
             {
                 return this.Error("Username should be between 4 and 20 characters long.");
+            }
+
+            if (string.IsNullOrEmpty(inputModel.Email))
+            {
+                return this.Error("Email should not be empty.");
+            }
+
+            if (string.IsNullOrEmpty(inputModel.Password))
+            {
+                return this.Error("Password should not be empty.");
+            }
+
+            if (inputModel.Password.Length < 5 || inputModel.Password.Length > 20)
+            {
+                return this.Error("Password should be between 5 and 20 characters long.");
             }
 
             this.usersService.Create(inputModel);
